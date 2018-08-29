@@ -2,40 +2,18 @@ package android;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class CP_1_CrearCuenta_Android {
-
-    private AndroidDriver driver;
-
-    @Before
-    public void setUp() throws MalformedURLException {
-        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("platformVersion", "7.0");
-        desiredCapabilities.setCapability("deviceName", "Android ");
-        desiredCapabilities.setCapability("app", "C:\\Users\\rosi\\Documents\\TempNTS\\apks\\10.apk");
-
-        URL remoteUrl = new URL("http://localhost:4723/wd/hub");
-
-        driver = new AndroidDriver(remoteUrl, desiredCapabilities);
-    }
+public class CP_1_CrearCuenta_Android extends BaseTest {
 
     @Test
     public void sampleTest() {
         try {
-            Thread.sleep(6000);
-            MobileElement el1 = (MobileElement) driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc='Open']"));
+            parametros = leerCSV("src/test/java/configuracion/CP1_Configuracion");
+            Thread.sleep(8000);
+            MobileElement el1 = (MobileElement) driver.findElementById("Open");
             el1.click();
             Thread.sleep(2000);
             (new TouchAction(driver)).tap(294, 471).perform();
@@ -43,27 +21,27 @@ public class CP_1_CrearCuenta_Android {
             driver.navigate().back();
             Thread.sleep(2000);
             MobileElement el2 = (MobileElement) driver.findElementById("com.nationalsoft.srapp:id/txtName");
-            el2.sendKeys("Walook Pruebas");
+            el2.sendKeys(parametros[0]);
             Thread.sleep(2000);
             driver.navigate().back();
             Thread.sleep(2000);
             MobileElement el3 = (MobileElement) driver.findElementById("com.nationalsoft.srapp:id/txtLastName");
-            el3.sendKeys("Automation");
+            el3.sendKeys(parametros[1]);
             Thread.sleep(2000);
             driver.navigate().back();
             Thread.sleep(2000);
             MobileElement el4 = (MobileElement) driver.findElementById("com.nationalsoft.srapp:id/txtEmail");
-            el4.sendKeys("walook.pruebas@gmail.com");
+            el4.sendKeys(parametros[2]);
             Thread.sleep(2000);
             driver.navigate().back();
             Thread.sleep(2000);
             MobileElement el5 = (MobileElement) driver.findElementById("com.nationalsoft.srapp:id/txtpassword");
-            el5.sendKeys("Admin123");
+            el5.sendKeys(parametros[3]);
             Thread.sleep(2000);
             driver.navigate().back();
             Thread.sleep(2000);
             MobileElement el6 = (MobileElement) driver.findElementById("com.nationalsoft.srapp:id/txtconfirmpassword");
-            el6.sendKeys("Admin123");
+            el6.sendKeys(parametros[3]);
             Thread.sleep(2000);
             driver.navigate().back();
             Thread.sleep(2000);
@@ -91,8 +69,5 @@ public class CP_1_CrearCuenta_Android {
         }
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
+
 }
