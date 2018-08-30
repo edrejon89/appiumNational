@@ -72,4 +72,4 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
-src/.idea
+src/.idea/
