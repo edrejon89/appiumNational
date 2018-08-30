@@ -12,7 +12,7 @@ public class CP_8_IniciarSesionFacebook extends BaseTest {
 
 
     @Test
-    public void sampleTest() {
+    public void iniciarSesionFacebooktest() {
         try {
             Thread.sleep(8000);
             MobileElement btnMenu = (MobileElement) driver.findElementByAccessibilityId("Open");

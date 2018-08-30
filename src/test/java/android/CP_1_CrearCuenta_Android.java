@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class CP_1_CrearCuenta_Android extends BaseTest {
 
     @Test
-    public void sampleTest() {
+    public void crearCuentaTest() {
         try {
             parametros = leerCSV("src/test/java/configuracion/CP1_Configuracion");
             Thread.sleep(8000);
