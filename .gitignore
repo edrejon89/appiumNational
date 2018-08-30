@@ -29,6 +29,12 @@ buildNumber.properties
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/nts1801.3.iml
+.idea/vcs.xml
+
 
 # Gradle
 .idea/**/gradle.xml
