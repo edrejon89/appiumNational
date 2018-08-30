@@ -4,6 +4,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -14,6 +16,7 @@ public class BaseTest {
 
     public static AndroidDriver driver;
     public  String[] parametros;
+    protected WebDriverWait wait;
 
     @Before
     public void setUp() throws IOException {
@@ -29,6 +32,7 @@ public class BaseTest {
         URL remoteUrl = new URL("http://localhost:4723/wd/hub");
 
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
+        wait = new WebDriverWait(driver,60 );
     }
 
     @After
