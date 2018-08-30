@@ -24,6 +24,7 @@ public class BaseTest {
         desiredCapabilities.setCapability("platformVersion", capabilities[1]);
         desiredCapabilities.setCapability("deviceName", capabilities[2]);
         desiredCapabilities.setCapability("app", capabilities[3]);
+        desiredCapabilities.setCapability("automationName", capabilities[4]);
 
         URL remoteUrl = new URL("http://localhost:4723/wd/hub");
 
