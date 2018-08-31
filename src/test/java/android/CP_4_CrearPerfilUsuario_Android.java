@@ -18,7 +18,6 @@ public class CP_4_CrearPerfilUsuario_Android extends BaseTestMac{
             Thread.sleep(8000);
 
             parametros = leerCSV("src/test/java/configuracion/CP4_Configuracion");
-
             MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("Open");
             el2.click();
             MobileElement el3 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
