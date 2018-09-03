@@ -2,6 +2,7 @@ package android;
 
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -29,14 +30,17 @@ public class CP_19_AgregarUnCuponEnElRestaurante extends BaseTest {
             btnBuscar.click();
             MobileElement barraBuscador = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/search_src_text")));
             barraBuscador.sendKeys(parametros[2]);
-            barraBuscador.sendKeys(Keys.ENTER);
+            Thread.sleep(1000);
+            (new TouchAction(driver)).tap(937, 1652).perform();
+            Thread.sleep(500);
             MobileElement primerRestaurant = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout")));
             primerRestaurant.click();
             MobileElement btnOpciones = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageView")));
             btnOpciones.click();
             MobileElement btnPromociones = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/buttonFloatingPromo")));
             btnPromociones.click();
-            MobileElement btnDetalleCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Button")));
+            String cupon = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[" + parametros[3] + "]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Button";
+            MobileElement btnDetalleCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cupon)));
             btnDetalleCupon.click();
             MobileElement btnAgregarCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnSaveCoupon")));
             btnAgregarCupon.click();
@@ -48,7 +52,7 @@ public class CP_19_AgregarUnCuponEnElRestaurante extends BaseTest {
             Thread.sleep(2000);
             MobileElement btnRegresar2 = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             btnRegresar2.click();
-            Thread.sleep(2000);
+            Thread.sleep(8000);
             MobileElement btnRegresar3 = (MobileElement) driver.findElementByAccessibilityId("Contraer");
             btnRegresar3.click();
             Thread.sleep(5000);
