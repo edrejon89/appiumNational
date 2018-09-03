@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-public class CP_8_IniciarSesionFacebook extends BaseTest {
+public class CP_8_IniciarSesionFacebook_Android extends BaseTest {
 
 
     @Test
