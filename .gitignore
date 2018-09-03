@@ -80,3 +80,6 @@ fabric.properties
 .idea/httpRequests
 
 src/.idea/
+.idea
+.idea/
+.idea/*
