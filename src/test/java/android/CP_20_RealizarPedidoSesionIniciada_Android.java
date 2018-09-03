@@ -2,10 +2,13 @@ package android;
 
 import io.appium.java_client.MobileElement;
 import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CP_20_RealizarPedidoSesionIniciada_Android extends BaseTestMac {
+
+    @Test
     public void CP_20_RealizarPedidoSesionIniciada_AndroidTest(){
         try {
             parametros = leerCSV("src/test/java/configuracion/CP20_Configuracion");
