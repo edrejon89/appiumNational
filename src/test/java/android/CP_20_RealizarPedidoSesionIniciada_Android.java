@@ -29,7 +29,7 @@ public class CP_20_RealizarPedidoSesionIniciada_Android extends BaseTestMac {
             el7.click();
             MobileElement el8 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton")));
             el8.click();
-            MobileElement buttonFloatingToGo = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("com.nationalsoft.srapp:id/buttonFloatingToGo")));
+            MobileElement buttonFloatingToGo = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/buttonFloatingToGo")));
             buttonFloatingToGo.click();
             MobileElement el10 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]")));
             el10.click();
@@ -41,18 +41,22 @@ public class CP_20_RealizarPedidoSesionIniciada_Android extends BaseTestMac {
             btnOption2.click();
             MobileElement btnPay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnPay")));
             btnPay.click();
-            MobileElement el15 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("Desplazarse hacia arriba")));
+            Thread.sleep(4000);
+            MobileElement el15 = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             el15.click();
             Thread.sleep(8000);
+            btnMenu =  (MobileElement) driver.findElementByAccessibilityId("Open");
             btnMenu.click();
             MobileElement btnCerrarSesion = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[7]")));
             btnCerrarSesion.click();
             MobileElement button1 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
             button1.click();
+            Thread.sleep(2000);
             driver.navigate().back();
-//            MobileElement el19 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-//            el19.click();
-            btnCerrarSesion.click();
+            button1 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+            Thread.sleep(2000);
+            button1.click();
+            //btnCerrarSesion.click();
         }catch (Exception e){
             Assert.fail(e.getMessage());
         }
