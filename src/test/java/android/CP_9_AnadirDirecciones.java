@@ -35,21 +35,23 @@ public class CP_9_AnadirDirecciones extends BaseTest{
             btndirecciones.click();
             MobileElement btnAgregarDir = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnNewAddress")));
             btnAgregarDir.click();
+            MobileElement txtIdentificador = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/identifier")));
+            txtIdentificador.sendKeys(parametros[2]);
             MobileElement txtCalle = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/street")));
-            txtCalle.sendKeys(parametros[2]);
+            txtCalle.sendKeys(parametros[3]);
             MobileElement txtNoInterior = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/number")));
-            txtNoInterior.sendKeys(parametros[3]);
+            txtNoInterior.sendKeys(parametros[4]);
             driver.navigate().back();
             MobileElement txtNoExterior = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/internal_number")));
-            txtNoExterior.sendKeys(parametros[4]);
+            txtNoExterior.sendKeys(parametros[5]);
             MobileElement txtCruzamiento = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/intersection")));
-            txtCruzamiento.sendKeys(parametros[5]);
+            txtCruzamiento.sendKeys(parametros[6]);
             MobileElement txtCP = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/zipcode")));
-            txtCP.sendKeys(parametros[6]);
+            txtCP.sendKeys(parametros[7]);
             MobileElement txtMunicipio = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/municipality")));
-            txtMunicipio.sendKeys(parametros[7]);
+            txtMunicipio.sendKeys(parametros[8]);
             MobileElement txtColonia = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/colony")));
-            txtColonia.sendKeys(parametros[8]);
+            txtColonia.sendKeys(parametros[9]);
             Thread.sleep(1000);
             (new TouchAction(driver))
                     .press(832, 1214)
@@ -58,9 +60,9 @@ public class CP_9_AnadirDirecciones extends BaseTest{
                     .perform();
             Thread.sleep(2000);
             MobileElement txtCiudad = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/city")));
-            txtCiudad.sendKeys(parametros[9]);
+            txtCiudad.sendKeys(parametros[10]);
             MobileElement txtReferencia = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/references")));
-            txtReferencia.sendKeys(parametros[10]);
+            txtReferencia.sendKeys(parametros[11]);
             Thread.sleep(1000);
             MobileElement btnguardar = (MobileElement) driver.findElementByAccessibilityId("Guardar");
             btnguardar.click();
