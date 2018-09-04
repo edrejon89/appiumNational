@@ -24,15 +24,17 @@ public class CP_4_CrearPerfilUsuario_Android extends BaseTestMac{
             el3.click();
             MobileElement el4 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/sign_in_button")));
             el4.click();
-            MobileElement btnCG = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout")));
+            //Con este elemento se selecciona la cuenta de google configurada en el telefono en caso de contar mas de una, en este caso selecciona la segunda opcion.
+            MobileElement btnCG = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout")));
             btnCG.click();
+//          boton para permitir permisos de google(Este boton se puede apagar una vez que la cuenta ya existe)
+//          MobileElement btnPermitirGoo = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.gms:id/accept_button")));
+//          btnPermitirGoo.click();
             MobileElement el6 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/imageprofile")));
             el6.click();
             MobileElement el7 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[1]")));
             el7.click();
-            MobileElement el8 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button_once")));
-            el8.click();
-            Thread.sleep(3000);
+            Thread.sleep(10000);
             driver.navigate().back();
             MobileElement el9 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/imageprofile")));
             el9.click();
