@@ -9,11 +9,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP_19_AgregarUnCuponEnElRestaurante_Android extends BaseTest {
+public class CP_19_AgregarUnCuponEnElRestaurante_Android extends BaseTestMac {
 
     @Test
     public void agregarUnCuponEnElRestaurante() {
         try {
+//            Thread.sleep(8000);
+
             String[] parametros = leerCSV("src/test/java/configuracion/CP19_Configuracion");
             Thread.sleep(8000);
             MobileElement btnMenu = (MobileElement) driver.findElementByAccessibilityId("Open");
@@ -42,20 +44,21 @@ public class CP_19_AgregarUnCuponEnElRestaurante_Android extends BaseTest {
             String cupon = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[" + parametros[3] + "]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Button";
             MobileElement btnDetalleCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cupon)));
             btnDetalleCupon.click();
+            Thread.sleep(2000);
             MobileElement btnAgregarCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnSaveCoupon")));
             btnAgregarCupon.click();
             MobileElement btnConfirmarAgregar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
             btnConfirmarAgregar.click();
-            Thread.sleep(3000);
+            Thread.sleep(8000);
             MobileElement btnRegresar1 = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             btnRegresar1.click();
-            Thread.sleep(2000);
+            Thread.sleep(8000);
             MobileElement btnRegresar2 = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             btnRegresar2.click();
             Thread.sleep(8000);
             MobileElement btnRegresar3 = (MobileElement) driver.findElementByAccessibilityId("Contraer");
             btnRegresar3.click();
-            Thread.sleep(5000);
+            Thread.sleep(8000);
             MobileElement btnMenu2 = (MobileElement) driver.findElementByAccessibilityId("Open");
             btnMenu2.click();
             MobileElement btnCerrarSesion = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[7]")));
