@@ -24,17 +24,21 @@ public class CP_1_CrearCuenta_Android extends BaseTestMac {
             driver.navigate().back();
             MobileElement txtApellido = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtLastName")));
             txtApellido.sendKeys(parametros[1]);
-            driver.navigate().back();
-            MobileElement txtEmail = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtEmail")));
+            //driver.navigate().back();
+            MobileElement txtEmail = (MobileElement) driver.findElement(By.id("com.nationalsoft.srapp:id/txtEmail"));
+            bajarTecladoSiNoVisible(txtEmail);
             txtEmail.sendKeys(parametros[2]);
-            driver.navigate().back();
-            MobileElement txtPassword = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtpassword")));
+            //driver.navigate().back();
+            MobileElement txtPassword = (MobileElement) driver.findElement(By.id("com.nationalsoft.srapp:id/txtpassword"));
+            bajarTecladoSiNoVisible(txtPassword);
             txtPassword.sendKeys(parametros[3]);
-            driver.navigate().back();
-            MobileElement confirmPassword = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtconfirmpassword")));
+            //driver.navigate().back();
+            MobileElement confirmPassword = (MobileElement) driver.findElement(By.id("com.nationalsoft.srapp:id/txtconfirmpassword"));
+           bajarTecladoSiNoVisible(confirmPassword);
             confirmPassword.sendKeys(parametros[3]);
-            driver.navigate().back();
+            //driver.navigate().back();
             MobileElement btnCrear = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnAccount")));
+           bajarTecladoSiNoVisible(btnCrear);
             btnCrear.click();
             MobileElement btnOmitir1 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnSkip")));
             btnOmitir1.click();
@@ -52,6 +56,14 @@ public class CP_1_CrearCuenta_Android extends BaseTestMac {
             Assert.fail(e.getMessage());
         }
     }
+    public void bajarTecladoSiNoVisible(MobileElement element) throws InterruptedException {
 
+        if(!element.isDisplayed()){
+            Thread.sleep(5000);
+        }
+        if(!element.isDisplayed()){
+            driver.navigate().back();
+        }
+    }
 
 }
