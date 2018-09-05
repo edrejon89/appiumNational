@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP_16_CambiarUbicacionPorDireccionesGuardadas_Android extends BaseTest{
+public class CP_16_CambiarUbicacionPorDireccionesGuardadas_Android extends BaseTestMac{
 
     @Test
     public void cambiarUbicacionPorDireccionesGuardadas() {
@@ -40,7 +40,7 @@ public class CP_16_CambiarUbicacionPorDireccionesGuardadas_Android extends BaseT
             Thread.sleep(2000);
             MobileElement btnRegresar = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             btnRegresar.click();
-            Thread.sleep(5000);
+            Thread.sleep(8000);
             MobileElement btnMenu2 = (MobileElement) driver.findElementByAccessibilityId("Open");
             btnMenu2.click();
             MobileElement btnCerrarSesion = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[7]")));
