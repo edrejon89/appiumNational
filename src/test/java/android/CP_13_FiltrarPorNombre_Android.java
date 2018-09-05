@@ -1,6 +1,7 @@
 package android;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -19,7 +20,7 @@ public class CP_13_FiltrarPorNombre_Android extends  BaseTestMac {
             MobileElement el4 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/search_src_text")));
             el4.sendKeys("Walook");
             Thread.sleep(2000);
-            el4.sendKeys(Keys.ENTER);
+            (new TouchAction(driver)).tap(991,1684).perform();
             Thread.sleep(2000);
             driver.navigate().back();
         } catch (Exception e) {
