@@ -4,18 +4,10 @@ import io.appium.java_client.MobileElement;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-<<<<<<< HEAD
-public class CP_9_AnadirDirecciones_Android extends BaseTestMac{
-=======
-import java.util.HashMap;
-
 public class CP_9_AnadirDirecciones_Android extends BaseTest{
->>>>>>> correccionCp8
-
 
 
     @Test
