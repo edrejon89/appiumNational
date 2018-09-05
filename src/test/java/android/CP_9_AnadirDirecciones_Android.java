@@ -4,19 +4,9 @@ import io.appium.java_client.MobileElement;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-<<<<<<< HEAD
-public class CP_9_AnadirDirecciones_Android extends BaseTestMac{
-=======
-import java.util.HashMap;
-
 public class CP_9_AnadirDirecciones_Android extends BaseTest{
->>>>>>> correccionCp8
-
-
 
     @Test
     public void anadirDireccionesTest() {
@@ -59,18 +49,10 @@ public class CP_9_AnadirDirecciones_Android extends BaseTest{
             txtMunicipio.sendKeys(parametros[8]);
             MobileElement txtColonia = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/colony")));
             txtColonia.sendKeys(parametros[9]);
-            Thread.sleep(1000);
-            /*(new TouchAction(driver))
-                    .press(830, 1250)
-                    .moveTo(790, 700)
-                    .release()
-                    .perform();*/
-            TouchActions action = new TouchActions(driver);
-            action.scroll(txtColonia, 10, 100);
-            action.perform();
-            Thread.sleep(1000);
+            scrollAndClick("Ciudad");
             MobileElement txtCiudad = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/city")));
             txtCiudad.sendKeys(parametros[10]);
+            scrollAndClick("Referencias");
             MobileElement txtReferencia = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/references")));
             txtReferencia.sendKeys(parametros[11]);
             Thread.sleep(1000);
