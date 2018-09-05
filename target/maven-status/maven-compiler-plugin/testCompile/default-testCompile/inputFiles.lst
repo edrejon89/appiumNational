@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_15_FiltrarPorOtraUbicacion_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_5_IniciarSesion_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_1_CrearCuenta_Android.java
@@ -10,6 +9,7 @@ C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_12_FiltrarRestaura
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_13_FiltrarPorNombre_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\BaseTest.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_17_AgregarCuponMedianteMenu_Android.java
+C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_27_HistorialPedidos_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_16_CambiarUbicacionPorDireccionesGuardadas_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_14_FiltarPorCategoria_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_8_IniciarSesionFacebook_Android.java
@@ -17,21 +17,3 @@ C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\BaseTestMac.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_20_RealizarPedidoSesionIniciada_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_3_CreacionCuentaFb_Android.java
 C:\Users\rosi\IdeaProjects\nts1801.3\src\test\java\android\CP_19_AgregarUnCuponEnElRestaurante_Android.java
-=======
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_12_FiltrarRestaurantePorZonaCercana_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_13_FiltrarPorNombre_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_17_AgregarCuponMedianteMenu_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/BaseTestMac.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_8_IniciarSesionFacebook_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/BaseTest.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_19_AgregarUnCuponEnElRestaurante.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_9_AnadirDirecciones_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_20_RealizarPedidoSesionIniciada_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_4_CrearPerfilUsuario_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_15_FiltrarPorOtraUbicacion_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_3_CreacionCuentaFb_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_14_FiltarPorCategoria_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_5_IniciarSesion_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_16_CambiarUbicacionPorDireccionesGuardadas_Android.java
-/Users/erejon/Documents/SoftRest_Movil/git3/nts1801.3/src/test/java/android/CP_1_CrearCuenta_Android.java
->>>>>>> f14049c4d7b200fd23d3de8c0ed88c71edbeeddc
