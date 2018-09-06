@@ -32,16 +32,6 @@ public class CP_3_CreacionCuentaFb_Android extends BaseTestMac {
             opMasculino.click();
             MobileElement txtallergy = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtallergy")));
             txtallergy.sendKeys(parametros[1]);
-            (new TouchAction(driver))
-                    .press(1022, 1413)
-                    .moveTo(999, 569)
-                    .release()
-                    .perform();
-            (new TouchAction(driver))
-                    .press(1022, 1425)
-                    .moveTo(1010, 441)
-                    .release()
-                    .perform();
             MobileElement btnAccount = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnAccount")));
             btnAccount.click();
             MobileElement street = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/street")));
