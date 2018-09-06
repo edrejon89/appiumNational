@@ -1,12 +1,6 @@
 package android;
 
-<<<<<<< HEAD
-import org.junit.Test;
 
-public class CP_25_RealizarPedidoUsandoCupon_Android {
-    @Test
-    public void CP_25_RealizarPedidoUsandoCupoon_AndroidTest(){
-=======
 import io.appium.java_client.MobileElement;
 import org.junit.Assert;
 import org.junit.Test;
@@ -35,10 +29,15 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
 
 
             MobileElement titlePay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/titlePay")));
-
             titlePay.click();
-            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-            btnOkSi.click();
+            Thread.sleep(2000);
+            try {
+                MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+                btnOkSi.click();
+            }catch (Exception e){
+                    driver.navigate().back();
+            }
+
 
 
             MobileElement el10 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.ImageView")));
@@ -66,7 +65,7 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             btnDetail.click();
             MobileElement btnPay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnPay")));
             btnPay.click();
-            btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
             btnOkSi.click();
             Thread.sleep(8000);
             MobileElement navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
@@ -98,7 +97,7 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
         } catch (Exception e) {
             Assert.fail(e.getMessage());
         }
->>>>>>> cp25
-
     }
+
+
 }
