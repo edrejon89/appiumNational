@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP_3_CreacionCuentaFb_Android extends BaseTestMac {
+public class CP_3_CreacionCuentaFb_Android extends BaseTest {
 
 
     @Test
