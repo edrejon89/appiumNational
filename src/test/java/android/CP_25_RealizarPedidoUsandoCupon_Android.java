@@ -24,7 +24,7 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             MobileElement btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
             btnlogin.click();
             MobileElement img_pager_item = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
-            //Thread.sleep(42000);
+            Thread.sleep(42000);
             img_pager_item.click();
 
 
