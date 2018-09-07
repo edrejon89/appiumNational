@@ -24,22 +24,9 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             MobileElement btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
             btnlogin.click();
             MobileElement img_pager_item = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
+            //Este tiempo va a depender de la cantidad de promociones de la aplicación, por cada aplicacion en tiempo debe aumentar 5 segundos.
             Thread.sleep(45000);
             img_pager_item.click();
-
-
-//            MobileElement titlePay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/titlePay")));
-//            titlePay.click();
-//            Thread.sleep(2000);
-//            try {
-//                MobileElement btnOkSi = (MobileElement) driver.findElement(By.id("android:id/button1"));
-//                btnOkSi.click();
-//            }catch (Exception e){
-//                    driver.navigate().back();
-//            }
-
-
-
             MobileElement titlePay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/titlePay")));
             String tpay= titlePay.getText();
             if (tpay.equals("¡YA CUENTAS CON ESTA PROMOCIÓN!")){
@@ -49,24 +36,17 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
                 MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
                 btnOkSi.click();
             }
-
-
-
-
             MobileElement el10 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.ImageView")));
             el10.click();
             scrollAndClick("Walook");
             MobileElement el12 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton")));
             el12.click();
-
             MobileElement el13 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/buttonFloatingToGo")));
             el13.click();
-
             MobileElement el14 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView[1]")));
             el14.click();
             MobileElement el15 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout")));
             el15.click();
-
             MobileElement btnincrement = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnincrement")));
             btnincrement.click();
             Thread.sleep(1000);
@@ -81,25 +61,9 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             btnDetail.click();
             MobileElement btnPay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnPay")));
             btnPay.click();
-//            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-//            btnOkSi.click();
             Thread.sleep(8000);
             MobileElement navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             navUp.click();
-//            Thread.sleep(8000);
-//            navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
-//            navUp.click();
-//            Thread.sleep(8000);
-//            navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
-//            navUp.click();
-//            Thread.sleep(8000);
-//            navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
-//            navUp.click();
-//            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-//            btnOkSi.click();
-//            Thread.sleep(8000);
-//            navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
-//            navUp.click();
             Thread.sleep(8000);
             btnOpen = (MobileElement) driver.findElementByAccessibilityId("Open");
             btnOpen.click();
