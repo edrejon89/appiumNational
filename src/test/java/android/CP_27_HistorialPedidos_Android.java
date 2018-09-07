@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP_27_HistorialPedidos_Android extends BaseTestMac{
+public class CP_27_HistorialPedidos_Android extends BaseTest{
     @Test
     public void CP_27_HistorialPedidos_AndroidTest(){
 
@@ -42,7 +42,7 @@ public class CP_27_HistorialPedidos_Android extends BaseTestMac{
             MobileElement btnPedidos = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[3]")));
             btnPedidos.click();
             Thread.sleep(8000);
-            MobileElement btnArriba = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
+            MobileElement btnArriba = (MobileElement) driver.findElementByAccessibilityId("Desplazarse hacia arriba");
             btnArriba.click();
             Thread.sleep(8000);
             btnOpen = (MobileElement) driver.findElementByAccessibilityId("Open");
@@ -50,10 +50,6 @@ public class CP_27_HistorialPedidos_Android extends BaseTestMac{
             btnOpen.click();
             MobileElement btnCerrarSesion = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[7]")));
             btnCerrarSesion.click();
-            btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-            btnOkSi.click();
-            Thread.sleep(3000);
-            driver.navigate().back();
             btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
             btnOkSi.click();
         } catch (Exception e) {
