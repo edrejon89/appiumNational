@@ -42,7 +42,7 @@ public class CP_4_CrearPerfilUsuario_Android extends BaseTest{
             btnImagen2.click();*/
             MobileElement btnGaleria = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[2]")));
             btnGaleria.click();
-            //driver.navigate().back();
+            driver.navigate().back();
             //MobileElement el11 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.FrameLayout/android.widget.ImageView[1]")));
             //el11.click();
             MobileElement txtNacimiento = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtBirthDate")));
@@ -57,7 +57,7 @@ public class CP_4_CrearPerfilUsuario_Android extends BaseTest{
             btnMasculino.click();
             MobileElement txtNumero2 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtMobile")));
             txtNumero2.sendKeys(parametros[1]);
-            driver.navigate().back();
+            //driver.navigate().back();
             MobileElement txtAlergia = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtallergy")));
             txtAlergia.sendKeys(parametros[2]);
             MobileElement btnContinuar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnAccount")));
