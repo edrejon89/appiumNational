@@ -24,7 +24,7 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             MobileElement btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
             btnlogin.click();
             MobileElement img_pager_item = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
-            Thread.sleep(42000);
+            Thread.sleep(45000);
             img_pager_item.click();
 
 
@@ -95,9 +95,9 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
 //            Thread.sleep(8000);
 //            navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
 //            navUp.click();
-            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-            btnOkSi.click();
-            Thread.sleep(8000);
+//            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+//            btnOkSi.click();
+//            Thread.sleep(8000);
 //            navUp = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
 //            navUp.click();
             Thread.sleep(8000);
@@ -105,8 +105,9 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             btnOpen.click();
             MobileElement el30 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[7]")));
             el30.click();
-            btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
             btnOkSi.click();
+            Thread.sleep(3000);
             driver.navigate().back();
             btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
             btnOkSi.click();
