@@ -28,11 +28,12 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             MobileElement btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
             btnlogin.click();
             MobileElement img_pager_item = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
-
+//
             List <MobileElement> promos = new ArrayList<MobileElement> (driver.findElements(By.id("com.nationalsoft.srapp:id/img_pager_item")));
-            String promoscant = Integer.toString(promos.size());
+            Thread.sleep(2000);
+
             long segundos =  (long)promos.size()*5000;
-//            Assert.fail("Aqui fallo, la cantidad de segundos es: "+ segundos);
+            System.out.println(segundos);
             Thread.sleep(segundos);
 
 
