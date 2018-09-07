@@ -7,25 +7,36 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
     @Test
     public void CP_25_RealizarPedidoUsandoCupon_AndroidTest(){
 
         try {
             Thread.sleep(8000);
+            parametros =  leerCSV("src/test/java/configuracion/CP25_Configuracion");
             MobileElement btnOpen = (MobileElement) driver.findElementByAccessibilityId("Open");
             btnOpen.click();
             MobileElement btnIniciar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[2]")));
             btnIniciar.click();
             MobileElement txtEmail = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtEmail")));
-            txtEmail.sendKeys("walook.pruebas@gmail.com");
+            txtEmail.sendKeys(parametros[0]);
             MobileElement el4 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtpassword")));
-            el4.sendKeys("Admin123");
+            el4.sendKeys(parametros[1]);
             MobileElement btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
             btnlogin.click();
             MobileElement img_pager_item = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
+
+            List <MobileElement> promos = new ArrayList<MobileElement> (driver.findElements(By.id("com.nationalsoft.srapp:id/img_pager_item")));
+            String promoscant = Integer.toString(promos.size());
+            long segundos =  (long)promos.size()*5000;
+//            Assert.fail("Aqui fallo, la cantidad de segundos es: "+ segundos);
+            Thread.sleep(segundos);
+
+
             //Este tiempo va a depender de la cantidad de promociones de la aplicación, por cada aplicacion en tiempo debe aumentar 5 segundos.
-            Thread.sleep(45000);
             img_pager_item.click();
             MobileElement titlePay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/titlePay")));
             String tpay= titlePay.getText();
@@ -38,7 +49,7 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             }
             MobileElement el10 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.ImageView")));
             el10.click();
-            scrollAndClick("Walook");
+            scrollAndClick(parametros[2]);
             MobileElement el12 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.ViewGroup/android.widget.ImageButton")));
             el12.click();
             MobileElement el13 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/buttonFloatingToGo")));
