@@ -1,22 +1,30 @@
 package iOS;
 
+import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CP_5_IniciarSesion_IOS extends BaseTestIOS_Win {
 
+    @Test
     public void iniciarSesion(){
-        driver.findElement(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]")).click();
-        driver.findElement(By.xpath("//*[@text='Ingresar']")).click();
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@placeholder=' correo@ejemplo.com']")));
-        driver.findElement(By.xpath("//*[@placeholder=' correo@ejemplo.com']")).sendKeys("walook.pruebas@gmail.com");
-        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@placeholder=' **********']")));
-        driver.findElement(By.xpath("//*[@placeholder=' **********']")).sendKeys("Admin123");
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='INICIAR SESIÓN']")));
-        driver.findElement(By.xpath("//*[@text='INICIAR SESIÓN']")).click();
-        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]")));
-        driver.findElement(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]")).click();
-        driver.findElement(By.xpath("//*[@text='Cerrar sesión']")).click();
-        driver.findElement(By.xpath("//*[@text='Aceptar']")).click();
-
+        try {
+            String[] parametros = leerCSV("src/test/java/configuracion/CP5_Configuracion");
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Ingresar']"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']"))).sendKeys(parametros[0]);
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']"))).sendKeys(parametros[1]);
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]")));
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Cerrar sesión']"))).click();
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Aceptar']"))).click();
+        }catch (Exception e){
+            Assert.fail(e.getMessage());
+        }
     }
 }
