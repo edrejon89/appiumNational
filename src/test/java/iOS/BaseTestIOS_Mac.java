@@ -25,7 +25,7 @@ public class BaseTestIOS_Mac {
         dc.setCapability("reportDirectory", reportDirectory);
         dc.setCapability("reportFormat", reportFormat);
         dc.setCapability("testName", testName);
-        dc.setCapability(MobileCapabilityType.UDID, "ede87006142f705eb52dab03c67ba224710bb16d");
+        dc.setCapability(MobileCapabilityType.UDID, "77ee9e8524f364c19d6f916ff000414ba86fc300");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.softrestaurant.softrestaurantappdistrib");
         driver = new IOSDriver(new URL("http://localhost:4723/wd/hub"), dc);
         driver.setLogLevel(Level.INFO);
