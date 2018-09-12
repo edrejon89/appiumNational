@@ -26,13 +26,13 @@ public class pruebaRosi extends BaseTestIOS_Win{
     public void testUntitled() throws InterruptedException {
         Thread.sleep(8000);
         driver.findElement(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]")).click();
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Ingresar']")));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Ingresar']")));
         driver.findElement(By.xpath("//*[@text='Ingresar']")).click();
         Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@placeholder=' correo@ejemplo.com']")).sendKeys("rosi@gamils.com");
-        new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@placeholder=' **********']")));
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']")));
         driver.findElement(By.xpath("//*[@placeholder=' **********']")).sendKeys("Admin123");
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='INICIAR SESIÓN']")));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']")));
         driver.findElement(By.xpath("//*[@text='INICIAR SESIÓN']")).click();
         driver.findElement(By.xpath("//*[@text='Aceptar']")).click();
         driver.findElement(By.xpath("//*[@text='CANCELAR']")).click();
