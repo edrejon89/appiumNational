@@ -12,25 +12,23 @@ public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
         try {
                 Thread.sleep(15000);
                 parametros = leerCSV("src/test/java/configuracion/CP9_Configuracion");
+
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
                 Thread.sleep(6000);
                 driver.findElement(By.xpath("//*[@text='Ingresar']"));
-
-
-
-
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Ingresar']"))).click();
+
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']"))).sendKeys(parametros[0]);
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']")));
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']"))).sendKeys(parametros[1]);
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']"))).click();
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
 
+
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Mis direcciones']"))).click();
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Direcciones']/*[@class='UIAButton' and @width>0])[2]")));
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Identificador (Ej. Casa, Oficina)']"))).sendKeys(parametros[2]);
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Direcciones']/*[@class='UIAButton' and @width>0])[2]"))).click();
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Identificador (Ej. Casa, Oficina)']"))).sendKeys(parametros[2]+" "+parametros[12] );
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Calle']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='more, numbers']"))).click();
@@ -49,12 +47,11 @@ public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Cruzamientos']"))).sendKeys(parametros[6]);
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='C.P.']"))).click();
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='more, numbers']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='C.P.']"))).sendKeys(parametros[7]);
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Referencias']")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Referencias']"))).click();
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Referencias']"))).sendKeys(parametros[8]);
+                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Referencias']"))).sendKeys(parametros[11]);
 
                 driver.hideKeyboard();
 
