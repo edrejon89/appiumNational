@@ -11,7 +11,7 @@ public class CP_20_RealizarPedidoSesionIniciada_IOS extends BaseTestIOS_Mac{
     public void CP_20_RealizarPedidoSesionIniciada_IOSTest(){
 
         try {
-            parametros=leerCSV("src/test/java/configuracion/CP20_Configuracion");wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
+        parametros=leerCSV("src/test/java/configuracion/CP20_Configuracion");wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Ingresar']"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']"))).sendKeys(parametros[0]);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@placeholder=' **********']")));
@@ -31,7 +31,7 @@ public class CP_20_RealizarPedidoSesionIniciada_IOS extends BaseTestIOS_Mac{
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text=' PAGAR COMPRA']"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='   ORDENAR']"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='CONFIRMAR']"))).click();
-        Thread.sleep(20000);
+        Thread.sleep(20000);//Espera para evitar que se haga clic sobre la notificación de correo electrónico
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class='UIAButton' and ./parent::*[@text='Mi pedido']]")));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='UIAButton' and ./parent::*[@text='Mi pedido']]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='ic keyboard backspace']"))).click();
