@@ -11,7 +11,8 @@ public class CP_20_RealizarPedidoSesionIniciada_IOS extends BaseTestIOS_Mac{
     public void CP_20_RealizarPedidoSesionIniciada_IOSTest(){
 
         try {
-        parametros=leerCSV("src/test/java/configuracion/CP20_Configuracion");wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
+        parametros=leerCSV("src/test/java/configuracion/CP20_Configuracion");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Ingresar']"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']"))).sendKeys(parametros[0]);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@placeholder=' **********']")));
