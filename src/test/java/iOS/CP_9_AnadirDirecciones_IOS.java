@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
+        //requiere que al iniciar la prueba se minimicen todas las ventanas abiertas para que la ventana del sincronizador se encuentre a la vista
+
     @Test
     public void CP_9_AnadirDirecciones_IOSTest(){
         try {
