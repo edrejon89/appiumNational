@@ -13,7 +13,7 @@ public class CP_19_AgregarCuponEnRestaurante_IOS extends BaseTestIOS_Win {
     @Test
     public void agregarCuponEnRestaurante(){
         try {
-            String[] parametros = leerCSV("src/test/java/configuracion/CP19_Configuracion");
+            parametros = leerCSV("src/test/java/configuracion/CP19_Configuracion");
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Ingresar']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']"))).sendKeys(parametros[0]);

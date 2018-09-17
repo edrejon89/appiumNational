@@ -20,20 +20,11 @@ public class CP_27_HistorialPedidos_Android extends BaseTest{
             MobileElement btnIniciarSesion = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[2]")));
             btnIniciarSesion.click();
             MobileElement txtEmail = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtEmail")));
+            txtEmail.clear();
             txtEmail.sendKeys(parametros[0]);
-            String wrongMail = txtEmail.getText();
             MobileElement txtpassword = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtpassword")));
             txtpassword.sendKeys(parametros[1]);
             MobileElement btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
-            btnlogin.click();
-            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-            btnOkSi.click();
-            txtEmail = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtEmail")));
-            txtEmail.clear();
-            txtEmail.sendKeys(parametros[2]);
-            String correctEmail = txtEmail.getText();
-            Assert.assertNotEquals(wrongMail,correctEmail);
-            btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
             btnlogin.click();
             Thread.sleep(30000);
             btnOpen = (MobileElement) driver.findElementByAccessibilityId("Open");
@@ -50,7 +41,7 @@ public class CP_27_HistorialPedidos_Android extends BaseTest{
             btnOpen.click();
             MobileElement btnCerrarSesion = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[7]")));
             btnCerrarSesion.click();
-            btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+            MobileElement btnOkSi = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
             btnOkSi.click();
         } catch (Exception e) {
             Assert.fail(e.getMessage());
