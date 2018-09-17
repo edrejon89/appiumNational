@@ -9,7 +9,7 @@ public class CP_21_RealizarPedidoMasUnProducto_IOS extends BaseTestIOS_Mac {
 
     @Test
     public void CP_21_RealizarPedidoMasUnProducto_IOSTest(){
-
+//  El caso selecciona de los primeros restaurantes de la lista, actualmente usa LOS TACOS YUCATECOS.
         try {
 
             parametros=leerCSV("src/test/java/configuracion/CP21_Configuracion");
@@ -30,7 +30,6 @@ public class CP_21_RealizarPedidoMasUnProducto_IOS extends BaseTestIOS_Mac {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='+']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Mis direcciones']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text=' PAGAR COMPRA']"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='   ORDENAR']")));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='   ORDENAR']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='CONFIRMAR']")));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='CONFIRMAR']"))).click();
