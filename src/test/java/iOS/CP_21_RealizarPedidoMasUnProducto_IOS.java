@@ -1,11 +1,14 @@
 package iOS;
 
+import io.appium.java_client.ios.IOSElement;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP_21_RealizarPedidoMasUnProducto_IOS extends BaseTestIOS_Mac {
+import java.util.List;
+
+public class CP_21_RealizarPedidoMasUnProducto_IOS extends BaseTestIOS_Win {
 
     @Test
     public void CP_21_RealizarPedidoMasUnProducto_IOSTest(){
@@ -16,16 +19,27 @@ public class CP_21_RealizarPedidoMasUnProducto_IOS extends BaseTestIOS_Mac {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Ingresar']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']"))).sendKeys(parametros[0]);
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']")));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']"))).sendKeys(parametros[1]);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Vegetariana' and @class='UIAStaticText' and ./parent::*[@class='UIAView']]"))).click();
+            //Se utilizan listas para parametrizar el restaurante y los productos por medio de indices
             Thread.sleep(5000);
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("((//*[@class='UIATable' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAImage']]/*[@class='UIAView'])[3]/*[@text='LOS TACOS YUCATECOS'])[2]"))).click();
+            List<IOSElement> rest = driver.findElements(By.xpath("//*[@name='ic_room_pointGps']"));
+            int index = Integer.parseInt(parametros[2]) + 1;
+            rest.get(index).click();
+            Thread.sleep(5000);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='  ORDENAR DEL MENU']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Pasar a recoger']"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and ./parent::*[./parent::*[./parent::*[@class='UIAView']]]]/*/*[@text='SNACK'])[1]"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='FRUTAS DE TEMPORADA' and @class='UIAStaticText']"))).click();
+            List<IOSElement> grupos = driver.findElements(By.xpath("//*[@name='More Info']"));
+            Thread.sleep(3000);
+            index = Integer.parseInt(parametros[3]) - 1;
+            grupos.get(index).click();
+            Thread.sleep(3000);
+            List<IOSElement> producs = driver.findElements(By.xpath("//*[@XCElementType='XCUIElementTypeTextView']"));
+            producs.get(0).click();
+            Thread.sleep(5000);
+            //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and ./parent::*[./parent::*[./parent::*[@class='UIAView']]]]/*/*[@text='SNACK'])[1]"))).click();
+            //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='FRUTAS DE TEMPORADA' and @class='UIAStaticText']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='+']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='+']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Mis direcciones']"))).click();

@@ -30,9 +30,11 @@ public class CP_20_RealizarPedidoSesionIniciada_IOS extends BaseTestIOS_Win{
             Thread.sleep(5000);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='  ORDENAR DEL MENU']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Pasar a recoger']"))).click();
+            Thread.sleep(3000);
             List<IOSElement> grupos = driver.findElements(By.xpath("//*[@name='More Info']"));
             index = Integer.parseInt(parametros[3]) - 1;
             grupos.get(index).click();
+            Thread.sleep(3000);
             List<IOSElement> producs = driver.findElements(By.xpath("//*[@XCElementType='XCUIElementTypeTextView']"));
             producs.get(0).click();
             Thread.sleep(5000);
