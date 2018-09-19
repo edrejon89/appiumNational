@@ -22,9 +22,7 @@ public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' correo@ejemplo.com']"))).sendKeys(parametros[0]);
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']"))).sendKeys(parametros[1]);
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']"))).click();
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
 
 
@@ -36,11 +34,9 @@ public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='more, numbers']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Calle']"))).sendKeys(parametros[3]);
 
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Ext.']")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Ext.']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Ext.']"))).sendKeys(parametros[4]);
 
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Int.']")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Int.']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Int.']"))).sendKeys(parametros[5]);
 
@@ -51,13 +47,11 @@ public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='C.P.']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='C.P.']"))).sendKeys(parametros[7]);
 
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Referencias']")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Referencias']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Referencias']"))).sendKeys(parametros[11]);
 
                 driver.hideKeyboard();
 
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='GUARDAR']")));
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='GUARDAR']"))).click();
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();
