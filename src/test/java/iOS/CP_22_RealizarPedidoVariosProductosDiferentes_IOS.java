@@ -1,9 +1,12 @@
 package iOS;
 
+import io.appium.java_client.ios.IOSElement;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
 
 public class CP_22_RealizarPedidoVariosProductosDiferentes_IOS extends BaseTestIOS_Mac{
 
@@ -19,16 +22,46 @@ public class CP_22_RealizarPedidoVariosProductosDiferentes_IOS extends BaseTestI
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder=' **********']"))).sendKeys(parametros[1]);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='INICIAR SESIÓN']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Vegetariana' and @class='UIAStaticText' and ./parent::*[@class='UIAView']]"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("((//*[@class='UIATable' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAImage']]/*[@class='UIAView'])[2]/*[@text='PRUEBAS WALOOK'])[2]"))).click();
+
+            Thread.sleep(5000);
+            List<IOSElement> rest =  driver.findElements(By.xpath("//*[@name='ic_room_pointGps']"));
+            int index = Integer.parseInt(parametros[2]);
+            rest.get(index).click();
+
+//            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("((//*[@class='UIATable' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAImage']]/*[@class='UIAView'])[2]/*[@text='PRUEBAS WALOOK'])[2]"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='  ORDENAR DEL MENU']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Pasar a recoger']"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and ./parent::*[./parent::*[./parent::*[@class='UIAView']]]]/*/*[@text='GrupoPostres'])[1]"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAImage']]/*/*[@text='NombreProducto'])[1]"))).click();
+
+            Thread.sleep(5000);
+            List<IOSElement> group =  driver.findElements(By.xpath("//*[@name='More Info']"));
+            index = Integer.parseInt(parametros[3])-1;
+            group.get(index).click();
+
+            Thread.sleep(5000);
+            List<IOSElement> prod = driver.findElements(By.xpath("//*[@XCElementType='XCUIElementTypeTextView']"));
+            prod.get(0).click();
+
+
+
+
+
+
+
+            //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and ./parent::*[./parent::*[./parent::*[@class='UIAView']]]]/*/*[@text='GrupoPostres'])[1]"))).click();
+            //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and (./preceding-sibling::* | ./following-sibling::*)[@class='UIAImage']]/*/*[@text='NombreProducto'])[1]"))).click();
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text=' e ir al menú']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='ic keyboard backspace']"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and (./preceding-sibling::* | ./following-sibling::*)[@text='        [ 1 ]']]/*/*[@text='GrupoPostres'])[2]"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Flan']"))).click();
+            Thread.sleep(5000);
+            group =  driver.findElements(By.xpath("//*[@name='More Info']"));
+            index = Integer.parseInt(parametros[3]);
+            group.get(index).click();
+
+            Thread.sleep(5000);
+            prod = driver.findElements(By.xpath("//*[@XCElementType='XCUIElementTypeTextView']"));
+            prod.get(1).click();
+            //            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='UIATable' and (./preceding-sibling::* | ./following-sibling::*)[@text='        [ 1 ]']]/*/*[@text='GrupoPostres'])[2]"))).click();
+//            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Flan']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text=' PAGAR COMPRA']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='   ORDENAR']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='CONFIRMAR']"))).click();
