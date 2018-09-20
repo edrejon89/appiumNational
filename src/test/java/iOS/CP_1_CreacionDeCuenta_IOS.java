@@ -24,7 +24,6 @@ public class CP_1_CreacionDeCuenta_IOS extends BaseTestIOS_Win {
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Confirmar Contraseña']"))).sendKeys(parametros[3]);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='O ingresa tus datos']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='CREAR CUENTA']"))).click();
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='OMITIR']")));
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='OMITIR']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='OMITIR']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@text='Categorias']/*[@class='UIAButton'])[1]"))).click();

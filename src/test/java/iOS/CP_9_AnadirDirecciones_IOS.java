@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
+public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Win{
         //requiere que al iniciar la prueba se minimicen todas las ventanas abiertas para que la ventana del sincronizador se encuentre a la vista
 
     @Test
@@ -31,7 +31,7 @@ public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Identificador (Ej. Casa, Oficina)']"))).sendKeys(parametros[2]+" "+parametros[12] );
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Calle']"))).click();
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='more, numbers']"))).click();
+                //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='more, numbers']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Calle']"))).sendKeys(parametros[3]);
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Ext.']"))).click();
@@ -41,7 +41,7 @@ public class CP_9_AnadirDirecciones_IOS extends BaseTestIOS_Mac{
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Número Int.']"))).sendKeys(parametros[5]);
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Cruzamientos']"))).click();
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='more, numbers']"))).click();
+                //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='more, numbers']"))).click();
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Cruzamientos']"))).sendKeys(parametros[6]);
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='C.P.']"))).click();
