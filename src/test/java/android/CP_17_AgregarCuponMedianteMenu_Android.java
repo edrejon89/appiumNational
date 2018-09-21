@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class CP_17_AgregarCuponMedianteMenu_Android extends  BaseTest{
 
     @Test
@@ -45,10 +47,19 @@ public class CP_17_AgregarCuponMedianteMenu_Android extends  BaseTest{
             String promo = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[" + parametros[2] + "]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.Button";
             MobileElement promocion = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(promo)));
             promocion.click();
-            MobileElement btnAgregar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnSaveCoupon")));
-            btnAgregar.click();
-            MobileElement btnOk = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-            btnOk.click();
+
+            List btnAgregar = driver.findElements(By.id("com.nationalsoft.srapp:id/btnSaveCoupon"));
+            if (!btnAgregar.isEmpty()){
+                MobileElement btnAdd = (MobileElement) btnAgregar.get(0);
+                btnAdd.click();
+                MobileElement btnOk = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+                btnOk.click();
+
+            }else{
+                Thread.sleep(8000);
+                MobileElement btnREgresar = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
+                btnREgresar.click();
+            }
             Thread.sleep(8000);
             MobileElement btnREgresar = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             btnREgresar.click();

@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP_5_IniciarSesion_Android extends BaseTestMac{
+public class CP_5_IniciarSesion_Android extends BaseTest{
 
     @Test
     public void CP5IniciarSesionAndroidTest(){

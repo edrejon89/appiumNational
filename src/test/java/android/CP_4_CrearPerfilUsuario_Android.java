@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 
 public class CP_4_CrearPerfilUsuario_Android extends BaseTest{
 
@@ -28,18 +30,23 @@ public class CP_4_CrearPerfilUsuario_Android extends BaseTest{
             String cuenta = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout["+ parametros[0] +"]/android.widget.LinearLayout";
             MobileElement btnOpcionCuenta = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cuenta)));
             btnOpcionCuenta.click();
-//          boton para permitir permisos de google(Este boton se puede apagar una vez que la cuenta ya existe)
-//          MobileElement btnPermitirGoo = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.gms:id/accept_button")));
-//          btnPermitirGoo.click();
+
+  //        boton para permitir permisos de google(Este boton se puede apagar una vez que la cuenta ya existe)
+            List btnPermitirGoo = driver.findElements(By.id("com.google.android.gms:id/accept_button"));
+            if (!btnPermitirGoo.isEmpty()){
+                MobileElement btnGoo = (MobileElement) btnPermitirGoo.get(0);
+                btnGoo.click();
+            }
+
             MobileElement btnImagen = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/imageprofile")));
             btnImagen.click();
-            /*MobileElement btnCamara = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[1]")));
+            MobileElement btnCamara = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[1]")));
             btnCamara.click();
             Thread.sleep(10000);
             driver.navigate().back();
-            driver.navigate().back();
+            //driver.navigate().back();
             MobileElement btnImagen2 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/imageprofile")));
-            btnImagen2.click();*/
+            btnImagen2.click();
             MobileElement btnGaleria = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.TextView[2]")));
             btnGaleria.click();
             driver.navigate().back();

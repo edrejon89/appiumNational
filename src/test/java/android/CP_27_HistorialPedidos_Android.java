@@ -33,7 +33,7 @@ public class CP_27_HistorialPedidos_Android extends BaseTest{
             MobileElement btnPedidos = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[3]")));
             btnPedidos.click();
             Thread.sleep(8000);
-            MobileElement btnArriba = (MobileElement) driver.findElementByAccessibilityId("Desplazarse hacia arriba");
+            MobileElement btnArriba = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             btnArriba.click();
             Thread.sleep(8000);
             btnOpen = (MobileElement) driver.findElementByAccessibilityId("Open");

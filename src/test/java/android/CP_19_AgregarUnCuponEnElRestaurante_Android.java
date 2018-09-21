@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP_19_AgregarUnCuponEnElRestaurante_Android extends BaseTestMac {
+public class CP_19_AgregarUnCuponEnElRestaurante_Android extends BaseTest {
 
     @Test
     public void agregarUnCuponEnElRestaurante() {
@@ -45,10 +45,19 @@ public class CP_19_AgregarUnCuponEnElRestaurante_Android extends BaseTestMac {
             MobileElement btnDetalleCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cupon)));
             btnDetalleCupon.click();
             Thread.sleep(2000);
-            MobileElement btnAgregarCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnSaveCoupon")));
-            btnAgregarCupon.click();
-            MobileElement btnConfirmarAgregar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
-            btnConfirmarAgregar.click();
+
+            MobileElement btnAgregarCupon = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/titlePay")));
+
+            if (!btnAgregarCupon.getText().equals("USAR PROMOCIÓN")){
+                btnAgregarCupon.click();
+                MobileElement btnConfirmarAgregar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("android:id/button1")));
+                btnConfirmarAgregar.click();
+            }else{
+                Thread.sleep(8000);
+                MobileElement btnRegresar0 = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
+                btnRegresar0.click();
+            }
+
             Thread.sleep(8000);
             MobileElement btnRegresar1 = (MobileElement) driver.findElementByAccessibilityId("Navegar hacia arriba");
             btnRegresar1.click();
