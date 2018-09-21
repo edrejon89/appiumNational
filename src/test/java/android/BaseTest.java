@@ -28,6 +28,7 @@ public class BaseTest {
         desiredCapabilities.setCapability("deviceName", capabilities[2]);
         desiredCapabilities.setCapability("app", capabilities[3]);
         desiredCapabilities.setCapability("automationName", capabilities[4]);
+        desiredCapabilities.setCapability("newCommandTimeout", 120);
 
         URL remoteUrl = new URL("http://localhost:4723/wd/hub");
 

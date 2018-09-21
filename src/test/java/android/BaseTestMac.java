@@ -28,6 +28,7 @@ public class BaseTestMac {
         desiredCapabilities.setCapability("deviceName", parametros[2]);
         desiredCapabilities.setCapability("app", parametros[3]);
         desiredCapabilities.setCapability("automationName", parametros[4]);
+        desiredCapabilities.setCapability("NewCommandTimeout", 120);
 
         URL remoteUrl = new URL("http://localhost:4723/wd/hub");
 

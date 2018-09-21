@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
+public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTest{
     @Test
     public void CP_25_RealizarPedidoUsandoCupon_AndroidTest(){
 
@@ -21,23 +21,16 @@ public class CP_25_RealizarPedidoUsandoCupon_Android extends BaseTestMac{
             btnOpen.click();
             MobileElement btnIniciar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v4.widget.DrawerLayout/android.widget.FrameLayout/android.support.v7.widget.RecyclerView/android.support.v7.widget.LinearLayoutCompat[2]")));
             btnIniciar.click();
-            MobileElement txtEmail = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtEmail")));
-            txtEmail.sendKeys(parametros[0]);
-            MobileElement el4 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/txtpassword")));
-            el4.sendKeys(parametros[1]);
-            MobileElement btnlogin = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnlogin")));
-            btnlogin.click();
-            MobileElement img_pager_item = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
-//
-            List <MobileElement> promos = new ArrayList<MobileElement> (driver.findElements(By.id("com.nationalsoft.srapp:id/img_pager_item")));
-            Thread.sleep(2000);
-
-            long segundos =  (long)promos.size()*5000;
+            MobileElement footer = (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.nationalsoft.srapp:id/img_pager_item")));
+            List promos = driver.findElements(By.className("android.widget.ImageView"));
+            //List<MobileElement> promos = new ArrayList<MobileElement>(driver.findElements(By.id("com.nationalsoft.srapp:id/img_pager_item")));
+            //Thread.sleep(2000);
+            long segundos =  (long)(promos.size()-7)*5000;
             System.out.println(segundos);
             Thread.sleep(segundos);
 
-
             //Este tiempo va a depender de la cantidad de promociones de la aplicación, por cada aplicacion en tiempo debe aumentar 5 segundos.
+            MobileElement img_pager_item = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/img_pager_item")));
             img_pager_item.click();
             MobileElement titlePay = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/titlePay")));
             String tpay= titlePay.getText();
