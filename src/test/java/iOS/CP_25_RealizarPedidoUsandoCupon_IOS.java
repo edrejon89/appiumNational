@@ -33,20 +33,10 @@ public class CP_25_RealizarPedidoUsandoCupon_IOS extends BaseTestIOS_Mac {
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text and @class='UIAButton']")));
             IOSElement promo = driver.findElement(By.xpath("//*[@text and @class='UIAButton']"));
             String tpay=promo.getText();
-//            Assert.fail(tpay);
             if (tpay.equals(" ¡YA CUENTAS CON ESTA PROMOCIÓN!")){
-//                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='UIAButton' and ./parent::*[@text='prueba de promocion']]"))).click();
                 new TouchAction(driver).press(16,44).perform();
             }else {
-                Assert.fail(tpay);
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text=' AÑADIR A MIS PROMOCIONES']"))).click();
-                Thread.sleep(5000);
-                IOSElement yacuenta = driver.findElement(By.xpath("(((//*[@class='UIAView' and ./parent::*[@class='UIAView']]/*[@class='UIAView'])[13]/*/*[@class='UIAView' and ./parent::*[@class='UIAView']])[1]/*[@text and @class='UIAStaticText'])[1]"));
-                if (yacuenta.isDisplayed()){
-                    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Aceptar']"))).click();
-                }
-//                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='UIAButton' and ./parent::*[@text='prueba de promocion']]"))).click();
-                new TouchAction(driver).press(16,44).perform();
             }
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Lugares Cercanos']"))).click();
