@@ -45,7 +45,8 @@ public class CP_25_RealizarPedidoUsandoCupon_IOS extends BaseTestIOS_Mac {
                 if (yacuenta.isDisplayed()){
                     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Aceptar']"))).click();
                 }
-                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='UIAButton' and ./parent::*[@text='prueba de promocion']]"))).click();
+//                wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='UIAButton' and ./parent::*[@text='prueba de promocion']]"))).click();
+                new TouchAction(driver).press(16,44).perform();
             }
 
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Lugares Cercanos']"))).click();
