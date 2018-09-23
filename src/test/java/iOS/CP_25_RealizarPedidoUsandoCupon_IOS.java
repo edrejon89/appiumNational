@@ -28,6 +28,7 @@ public class CP_25_RealizarPedidoUsandoCupon_IOS extends BaseTestIOS_Mac {
 
 
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text and @class='UIAButton']")));
+            Thread.sleep(5000);
             new TouchAction(driver).press(150,250).perform();
             Thread.sleep(5000);
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text and @class='UIAButton']")));
