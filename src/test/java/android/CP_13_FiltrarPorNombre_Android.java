@@ -15,7 +15,7 @@ public class CP_13_FiltrarPorNombre_Android extends  BaseTest {
     public void CP_13_FiltrarPorNombre_AndroidTest() {
 
         try {
-            String[] parametros = leerCSV("src/test/java/configuracion/CP13_Configuracion");
+            parametros = leerCSV("src/test/java/configuracion/CP13_Configuracion");
             MobileElement btnBuscar = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/btnSearchDirectory")));
             btnBuscar.click();
             MobileElement cajaBusqueda = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.nationalsoft.srapp:id/search_src_text")));
