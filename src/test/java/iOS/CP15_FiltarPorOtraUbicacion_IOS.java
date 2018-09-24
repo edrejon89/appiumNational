@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CP15_FiltarPorOtraUbicacion_IOS extends BaseTestIOS_Mac {
+public class CP_15_FiltarPorOtraUbicacion_IOS extends BaseTestIOS_Mac {
     @Test
     public void CP15_FiltarPorOtraUbicacion_IOSTest(){
         try {
