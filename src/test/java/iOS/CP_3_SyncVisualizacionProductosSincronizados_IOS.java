@@ -27,7 +27,7 @@ public class CP_3_SyncVisualizacionProductosSincronizados_IOS extends BaseTestIO
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='o']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='o']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='k']"))).click();
-
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@placeholder='Restaurante...']"))).sendKeys(parametros[2]);
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Buscar']"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Italiana' and @class='UIAStaticText' and ./parent::*[@class='UIAView']]"))).click();
             wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='  ORDENAR DEL MENU']"))).click();
